@@ -3,7 +3,7 @@ import requests
 r = requests.get('https://quotes.toscrape.com/')
 html = r.text
 
-with open('quote.txt', 'w') as f:
+with open('request/quote.txt', 'w') as f:
     for line in html.split('\n'):
         if '<span class="text" itemprop="text">“' in line:
             line = line.replace('<span class="text" itemprop="text">“','').replace('”</span>','')
@@ -14,7 +14,7 @@ with open('quote.txt', 'w') as f:
 
 
 def get_authors():
-    with open('authors.txt', 'w') as f:
+    with open('request/authors.txt', 'w') as f:
         for line in html.split('\n'):
             if '<small class="author" itemprop="author">' in line:
                 line = line.replace('<span>by <small class="author" itemprop="author">','').replace('</small>','')
