@@ -8,7 +8,7 @@ for i in range(1,11):
     r = requests.get(f'https://quotes.toscrape.com/page/{i}/')
     html += r.text
 
-with open('request/authors&quotes.txt', 'w', encoding='utf-8') as f:
+with open('request/authors&quotes.csv', 'w', encoding='utf-8') as f:
     for line in html.split('\n'):
         
 
